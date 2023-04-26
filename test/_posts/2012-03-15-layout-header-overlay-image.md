@@ -1,8 +1,8 @@
 ---
 title: "Layout: Header Image Overlay"
 header:
-  overlay_image: /assets/images/unsplash-image-1.jpg
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  overlay_image: /assets/images/wago-stiftung_startseite.jpg
+  # caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
   actions:
     - label: "Call to action 1"
       url: "https://github.com"
