@@ -4,16 +4,16 @@
 
 #main {
   @include clearfix;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1em;
-  padding-right: 1em;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   max-width: 100%;
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
-
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  
   @include breakpoint($x-large) {
     max-width: $max-width;
   }
@@ -32,6 +32,7 @@ body {
 
 .initial-content,
 .search-content {
+  margin-top: 115px;
   flex: 1 0 auto;
 }
 

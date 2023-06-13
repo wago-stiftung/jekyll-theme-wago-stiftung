@@ -334,7 +334,8 @@ body:hover .visually-hidden button {
   position: relative;
   width: $navicon-width;
   height: $navicon-height;
-  background: $primary-color;
+  background: $masthead-background-color;
+  color: $masthead-link-color;
   margin: auto;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -346,7 +347,7 @@ body:hover .visually-hidden button {
     left: 0;
     width: $navicon-width;
     height: $navicon-height;
-    background: $primary-color;
+    background: $masthead-background-color;
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
@@ -362,7 +363,7 @@ body:hover .visually-hidden button {
 
 .close .navicon {
   /* hide the middle line*/
-  background: transparent;
+  background: $masthead-background-color;
 
   /* overlay the lines by setting both their top values to 0*/
   &:before,
@@ -396,17 +397,17 @@ body:hover .visually-hidden button {
       height: 100%;
       opacity: 0;
       background-color: $background-color;
-      -webkit-transition: $global-transition;
-      transition: $global-transition;
+      // -webkit-transition: $global-transition;
+      // transition: $global-transition;
       pointer-events: none;
     }
   }
 
   &.close {
     &:before {
-      opacity: 0.9;
-      -webkit-transition: $global-transition;
-      transition: $global-transition;
+      // opacity: 0.9;
+      // -webkit-transition: $global-transition;
+      // transition: $global-transition;
       pointer-events: auto;
     }
   }
@@ -416,12 +417,12 @@ body:hover .visually-hidden button {
   .navicon,
   .navicon:before,
   .navicon:after {
-    background: mix(#000, $primary-color, 25%);
+    // background: mix(#000, $primary-color, 25%);
   }
 
   &.close {
     .navicon {
-      background: transparent;
+      // background: transparent;
     }
   }
 }

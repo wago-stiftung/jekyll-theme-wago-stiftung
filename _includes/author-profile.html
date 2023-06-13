@@ -21,6 +21,33 @@
       </div>
     {% endif %}
   </div>
+  
+  {% if author.phone or author.fax or author.email %}
+  <div class="author__contact">
+    <ul class="author__urls social-icons">
+      {% if author.phone %}
+      <li>
+        <meta itemprop="phone" content="{{ author.phone }}" />
+        <i class="fas fa-fw fa-phone" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[site.locale].phone_label | default: "Phone" }}: {{ author.phone }}</span>
+      </li>
+      {% endif %}
+
+      {% if author.fax %}
+      <li>
+        <meta itemprop="fax" content="{{ author.fax }}" />
+        <i class="fas fa-fw fa-fax" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[site.locale].fax_label | default: "Fax" }}: {{ author.fax }}</span>
+      </li>
+      {% endif %}
+
+      {% if author.email %}
+      <li>
+        <meta itemprop="email" content="{{ author.email }}" />
+        <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}: <a href="mailto:{{ author.email }}" rel="me" class="u-email">{{ author.email }}</a></span>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+  {% endif %}
 
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse">{{ site.data.ui-text[site.locale].follow_label | remove: ":" | default: "Follow" }}</button>
@@ -47,14 +74,6 @@
         </li>
       {% endif %}
 
-      {% if author.email %}
-        <li>
-          <a href="mailto:{{ author.email }}" rel="me" class="u-email">
-            <meta itemprop="email" content="{{ author.email }}" />
-            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</span>
-          </a>
-        </li>
-      {% endif %}
 
       {% if author.keybase %}
         <li>
@@ -242,5 +261,11 @@
 
       {% include author-profile-custom-links.html %}
     </ul>
+  </div>
+
+  <div class="author__address">
+    {% if author.address %}
+    {{ author.address | markdownify }}
+    {% endif %}
   </div>
 </div>

@@ -13,9 +13,8 @@ $paragraph-indent: false !default; // true, false (default)
 $indent-var: 1.3em !default;
 
 /* system typefaces */
-$serif: Georgia, Times, serif !default;
-$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-  "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+$serif: "Roboto Slab", Times, serif !default;
+$sans-serif: Arial, sans-serif !default;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 
 /* sans serif typefaces */
@@ -30,7 +29,7 @@ $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
 
 $global-font-family: $sans-serif !default;
-$header-font-family: $sans-serif !default;
+$header-font-family: $serif !default;
 $caption-font-family: $serif !default;
 
 /* type scale */
@@ -77,7 +76,7 @@ $text-color: $wago_anthracite !default;
 $muted-text-color: $wago_anthracite_15 !default;
 $border-color: $wago_lightgray !default;
 $form-background-color: $wago_lightgray !default;
-$footer-background-color: $wago_green !default;
+$footer-background-color: $white !default;
 
 $primary-color: $wago_green !default;
 $success-color: $wago_green !default;
@@ -88,7 +87,7 @@ $focus-color: $wago_green !default;
 $active-color: $wago_green !default;
 
 .page__footer {
-  color: $wago_green !important; // override
+  color: $black !important; // override
 }
 
 .page__footer-follow .social-icons .svg-inline--fa {
@@ -185,7 +184,7 @@ $border-radius: 4px !default;
 $box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125) !default;
 $nav-height: 2em !default;
 $nav-toggle-height: 2rem !default;
-$navicon-width: 1.5rem !default;
-$navicon-height: 0.25rem !default;
+$navicon-width: 1rem !default;
+$navicon-height: 1rem !default;
 $global-transition: all 0.2s ease-in-out !default;
 $intro-transition: intro 0.3s both !default;

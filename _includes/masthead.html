@@ -5,12 +5,12 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <!-- {% unless logo_path == empty %} -->
-        <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ '/assets/images/mm-643_sublogo_wago-stiftung_rgb_weiss.png' | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
+        <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ '/assets/images/mm-643_sublogo_wago-stiftung_rgb_weiss.svg' | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         <!-- {% endunless %} -->
-        <a class="site-title" href="{{ '/' | relative_url }}">
+        <!-- <a class="site-title" href="{{ '/' | relative_url }}">
           {{ site.masthead_title | default: site.title }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
-        </a>
+        </a> -->
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
             <li class="masthead__menu-item">
@@ -26,7 +26,8 @@
         {% endif %}
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
-          <div class="navicon"></div>
+          <i class="navicon fas fa-solid fa-bars"></i>
+          <!-- <div class="navicon"></div> -->
         </button>
         <ul class="hidden-links hidden"></ul>
       </nav>

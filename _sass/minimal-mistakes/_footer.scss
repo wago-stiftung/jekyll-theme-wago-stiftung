@@ -4,6 +4,8 @@
 
 .page__footer {
   @include clearfix;
+  font-family: $global-font-family;
+  font-size: $type-size-7;
   float: left;
   margin-left: 0;
   margin-right: 0;
@@ -18,6 +20,9 @@
 
   footer {
     @include clearfix;
+    display: flex;
+    flex-direction: row;
+
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;
@@ -26,6 +31,15 @@
 
     @include breakpoint($x-large) {
       max-width: $x-large;
+    }
+
+    nav {
+      margin-left: 4em;
+      flex: 1;
+
+      ul {
+
+      }
     }
   }
 
@@ -48,8 +62,8 @@
 
 .page__footer-copyright {
   font-family: $global-font-family;
-  font-size: $type-size-7;
-  color: $white;
+  // font-size: $type-size-7;
+  // color: $white;
 }
 
 .page__footer-follow {

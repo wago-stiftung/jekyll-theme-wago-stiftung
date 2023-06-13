@@ -44,8 +44,10 @@
 }
 
 .archive__item-title {
+  margin-top: 0;
   margin-bottom: 0.25em;
-  font-family: $sans-serif-narrow;
+  font-family: "Roboto Slab";
+  text-transform: uppercase;
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -67,7 +69,7 @@
 /* remove border*/
 .page__content {
   .archive__item-title {
-    margin-top: 1em;
+    // margin-top: 1em;
     border-bottom: none;
   }
 }
@@ -87,6 +89,7 @@
 
 .archive__item-teaser {
   position: relative;
+  margin-bottom: 2em;
   border-radius: $border-radius;
   overflow: hidden;
 
@@ -240,15 +243,25 @@
 
 .feature__wrapper {
   @include clearfix();
-  margin-bottom: 2em;
-  border-bottom: 1px solid $border-color;
+  // margin-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  display: flex;
+  flex-direction: row;
 
   .archive__item-title {
     margin-bottom: 0;
   }
+
+  @include breakpoint($x-large) {
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .feature__item {
+  flex: 1;
   position: relative;
   margin-bottom: 2em;
   font-size: 1.125em;
@@ -280,8 +293,9 @@
   }
 
   .archive__item-body {
-    padding-left: gutter(1 of 12);
-    padding-right: gutter(1 of 12);
+    margin: 0 0 0 3em;
+    // padding-left: gutter(1 of 12);
+    // padding-right: gutter(1 of 12);
   }
 
   a.btn::before {
