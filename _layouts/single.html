@@ -41,6 +41,12 @@ layout: default
           </h1>{% endif %}
           {% include page__meta.html %}
           {% if page.subtitle %}<strong id="page-subtitle" class="page__subtitle p-name" itemprop="headline">{{ page.subtitle }}</strong>{% endif %}
+          {% if page.image_path %}
+            {% capture image_path %}{{ page.image_path | relative_url }}{% endcapture %}
+            {% capture image_caption %}{% if page.image_caption %}{{ page.image_caption }}{% endif %}{% endcapture %}
+
+            {% include figure image_path=image_path caption=page.image_caption %}
+          {% endif %}
         </header>
       {% endunless %}
       

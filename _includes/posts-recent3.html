@@ -1,0 +1,38 @@
+{% if paginator %}
+  {% assign posts = paginator.posts | where_exp: "item", "item.hidden != true" %}
+{% else %}
+  {% assign posts = site.posts | where_exp: "item", "item.hidden != true" %}
+{% endif %}
+
+<div class="posts_recent3">
+    {%- for post in posts limit:3 -%}
+    <div class="posts_recent3__item">
+        <div class="archive__item">
+            {% if post.image_path %}
+            <div class="archive__item-teaser">
+            <img src="{{ post.image_path | relative_url }}"
+            alt="{% if post.alt %}{{ post.alt }}{% endif %}" {% if post.image_width %}width="{{ post.image_width }}"{% endif %}>
+            </div>
+            {% endif %}
+            
+            <div class="archive__item-body">
+            {% if post.title %}
+            <strong class="archive__item-title-off">{{ post.title }}</strong>
+            {% endif %}
+            
+            <div class="date"><small>{{ post.date | date_to_long_string }}</small></div>
+
+            <div class="archive__item-excerpt">
+                {{ post.excerpt | markdownify }}
+            </div>
+            
+            {% if post.url %}
+            <p><a href="{{ post.url | relative_url }}" class="btn {{ post.btn_class }}">{{ post.btn_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+    {%- endfor -%}
+</div>
+
+<p class="center"><a href="{{ '/blog' | relative_url }}" class="btn btn--primary">{{ "" | default: site.data.ui-text[site.locale].all_posts | default: "Learn More" }}</a></p>
