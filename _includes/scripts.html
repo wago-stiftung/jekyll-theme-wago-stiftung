@@ -26,3 +26,18 @@
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
 {% endif %}
+
+<script>
+  function toggle_burgermenu() {
+      if (document.getElementById("masthead__burgermenu").classList.contains('hidden')) {
+          document.getElementById("masthead__burgermenu").classList.remove('hidden');
+          document.getElementById("masthead__nav-toggle-burger").classList.add('hidden');
+          document.getElementById("masthead__nav-toggle-close").classList.remove('hidden');
+      }
+      else {
+          document.getElementById("masthead__burgermenu").classList.add('hidden');
+          document.getElementById("masthead__nav-toggle-burger").classList.remove('hidden');
+          document.getElementById("masthead__nav-toggle-close").classList.add('hidden');
+      }
+  }
+</script>

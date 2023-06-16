@@ -11,26 +11,42 @@
           {{ site.masthead_title | default: site.title }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a> -->
-        <ul class="visible-links">
+        <ul class="">
           {%- for link in site.data.navigation.main -%}
             <li class="masthead__menu-item">
               <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
             </li>
           {%- endfor -%}
         </ul>
-        {% if site.search == true %}
-        <button class="search__toggle" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
-          <i class="fas fa-search"></i>
-        </button>
-        {% endif %}
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
-          <i class="navicon fas fa-solid fa-bars"></i>
-          <!-- <div class="navicon"></div> -->
-        </button>
-        <ul class="hidden-links hidden"></ul>
+        <div class="masthead__menu-buttons">
+          {% if site.search == true %}
+          <button class="search__toggle" type="button">
+            <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
+            <i class="fas fa-search"></i>
+          </button>
+          {% endif %}
+          <button class="masthead__nav-toggle" type="button">
+            <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
+            <!-- <span>=</span> -->
+            <!-- <span class="hidden">X</span> -->
+            <img id="masthead__nav-toggle-burger" class="" src="/assets/images/burger-menu_white.png" alt="Menu Toggle" onclick="toggle_burgermenu()"/>
+            <img id="masthead__nav-toggle-close" class="hidden" src="/assets/images/close_white.png" alt="Menu Toggle" onclick="toggle_burgermenu()"/>
+            <!-- <div class="navicon"></div> -->
+          </button>
+          <ul class="hidden-links hidden"></ul>
+        </div>
       </nav>
     </div>
+  </div>
+  <div id="masthead__burgermenu" class="masthead__burgermenu hidden">
+    <nav class="">
+      <ul class="">
+        {%- for link in site.data.navigation.main -%}
+          <li class="masthead__burgermenu-item">
+            <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
   </div>
 </div>

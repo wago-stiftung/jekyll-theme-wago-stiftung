@@ -173,6 +173,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex: 1;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -223,10 +224,10 @@
     cursor: pointer;
   }
 
-  .visible-links {
+  ul {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    display: none;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
@@ -237,6 +238,10 @@
     font-size: 13px;
     text-transform: uppercase;
 
+    @include breakpoint($medium-wide) {
+      display: flex;
+    }
+  
     li {
       -webkit-box-flex: 0;
       -ms-flex: none;
@@ -337,15 +342,15 @@
   }
 }
 
-.no-js {
-  .greedy-nav {
-    .visible-links {
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      overflow: visible;
-    }
-  }
-}
+// .no-js {
+//   .greedy-nav {
+//     .visible-links {
+//       -ms-flex-wrap: wrap;
+//       flex-wrap: wrap;
+//       overflow: visible;
+//     }
+//   }
+// }
 
 /*
      Navigation list
