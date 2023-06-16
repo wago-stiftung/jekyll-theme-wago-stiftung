@@ -120,8 +120,8 @@
 }
 
 .masthead__nav-toggle {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   height: $nav-toggle-height;
   display: block;
   background-color: $wago-anthracite;
@@ -133,6 +133,8 @@
 
   @include breakpoint($medium-wide) {
     display: none;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   img {

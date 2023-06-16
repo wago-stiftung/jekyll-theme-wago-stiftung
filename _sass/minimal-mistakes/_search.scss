@@ -9,8 +9,8 @@
 }
 
 .search__toggle {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   height: $nav-toggle-height;
   border: 0;
   outline: none;
@@ -20,6 +20,11 @@
   // -webkit-transition: 0.2s;
   // transition: 0.2s;
 
+  @include breakpoint($medium-wide) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
   &:hover {
     // color: $nav;
   }
