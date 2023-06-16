@@ -18,11 +18,12 @@
   </ul>
 </div> -->
 
-<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}</div>
+<!-- <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}</div> -->
 
 {% if site.footer.links %}
 <nav>
   <ul>
+    <li><span>&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}</span></li>
     {% for link in site.footer.links %}
     {% if link.label and link.url %}
     <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer">{{ link.label }}</a></li>
