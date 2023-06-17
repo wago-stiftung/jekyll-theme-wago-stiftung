@@ -1,0 +1,32 @@
+.author-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.coach-card {
+    width: 275px;
+    border: 1px solid #eee;
+    padding: 1em;
+    border-radius: 12px;
+
+    .author__avatar {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+}
+
+.jury-card {
+    width: 350px;
+    border: 1px solid #eee;
+    padding: 1em;
+    border-radius: 12px;
+
+    .author__avatar {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+}

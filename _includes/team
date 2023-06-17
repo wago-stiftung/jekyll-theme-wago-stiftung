@@ -1,0 +1,34 @@
+{% assign name = include.name  %}
+{% assign author = site.data.authors[name] | default: Nil %}
+
+{% if author %}
+<div itemscope itemtype="https://schema.org/Person" class="jury-card">
+
+  <div class="author__avatar">
+    {% assign avatar = author.avatar | default: "/assets/images/bio-photo.jpg" %}
+    <a href="{{ author.home | default: '/' | absolute_url }}">
+      <img src="{{ avatar | relative_url | default}}" alt="{{ author.name }}" itemprop="image" class="u-photo">
+    </a>
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="{{ author.home | default: '/' | absolute_url }}" itemprop="url">{{ author.name }}</a>
+    </h3>
+    {% if author.bio %}
+      <div class="author__bio p-note" itemprop="description">
+        {{ author.bio | markdownify }}
+      </div>
+    {% endif %}
+    {% if author.skills %}
+      <div class="author__bio" itemprop="skills">
+        <ul>
+          {% for skill in author.skills %}
+          <li>{{ skill }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
